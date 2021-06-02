@@ -27,6 +27,10 @@ public class LoginPage extends CommonMethods{
         sendText(usernamebox, username);
         sendText(passwordbox, password);
         click(loginBtn);
+
+
+
+        
     }
 
 }
