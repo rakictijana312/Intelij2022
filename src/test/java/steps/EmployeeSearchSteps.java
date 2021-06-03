@@ -12,10 +12,7 @@ import utils.ConfigReader;
 
 public class EmployeeSearchSteps extends CommonMethods {
 
-    @Given("user navigates to hrms")
-    public void user_navigates_to_hrms() {
-        setUp();
-    }
+
 
     @Given("user is logged in with valid admin credentials")
     public void user_is_logged_in_with_valid_admin_credentials() {
@@ -44,9 +41,20 @@ public class EmployeeSearchSteps extends CommonMethods {
         click(emplist.searchButton);
     }
 
+    @When("user enters valid employee name")
+    public void user_enters_valid_employee_name() {
+        EmployeeListPage emplist = new EmployeeListPage();
+        sendText(emplist.employeenamefield, "sofiia");
+    }
+
     @Then("user see employee information is displayed")
     public void user_see_employee_information_is_displayed() {
         System.out.println("Employee name is displayed");
         tearDown();
+    }
+
+    @Given("user navigates to hrms")
+    public void user_navigates_to_hrms() {
+        setUp();
     }
 }
