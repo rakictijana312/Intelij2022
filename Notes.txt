@@ -1,0 +1,22 @@
+Recap -
+Cucumber - BDD
+
+Given - pre condition
+When - actions
+And - continues action, precondition, result
+Then - expected result/ outcome
+But - exclusion
+
+Feature - to write scenarios
+Steps - to link feature file scenarios
+pages - to define locators and other function
+
+Definition of done - when it is ready to deploy on production after testing
+Definition of ready - when user story is clear, testable, defined and sized.
+
+US 98903 - Login -
+valid admin credentials
+valid ess employee credentials
+valid username and invalid password for error check
+
+
