@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         //unimplemented steps
 
         tags = "@example"
-        //tags will identify   the scenarios based on the tags we will provide such as @smoke, @regression etc
+        //tags will identify the scenarios based on the tags we will provide such as @smoke, @regression etc
         // we can add multiple tags in the runner class to execute scenarios belong to different tags such
         //as and or ,
 )
