@@ -30,13 +30,13 @@ public class EmployeeSearchSteps extends CommonMethods {
     }
 
     @When("user enters valid employee id")
-    public void user_enters_valid_employee_id() {
+    public void aziz_said_it_is_same() {
         EmployeeListPage emplist = new EmployeeListPage();
         sendText(emplist.idEmployee, "15518");
     }
 
     @When("click on search button")
-    public void click_on_search_button() {
+    public void click_on_search_button_option_on_xyz_page() {
         EmployeeListPage emplist = new EmployeeListPage();
         click(emplist.searchButton);
     }
@@ -50,11 +50,6 @@ public class EmployeeSearchSteps extends CommonMethods {
     @Then("user see employee information is displayed")
     public void user_see_employee_information_is_displayed() {
         System.out.println("Employee name is displayed");
-        tearDown();
     }
 
-    @Given("user navigates to hrms")
-    public void user_navigates_to_hrms() {
-        setUp();
-    }
 }
