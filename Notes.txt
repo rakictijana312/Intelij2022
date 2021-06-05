@@ -23,6 +23,15 @@ recap -
 Runner class -
 features -
 glue -
+monochrome -
+dry run -
+strict
+tags
+hooks
+background
+parameters passing from feature file
+TDD approach in cucumber
+
 
 
 
