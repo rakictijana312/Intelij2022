@@ -27,7 +27,10 @@ public class LoginSteps extends CommonMethods {
     @Then("admin user is successfully logged in")
     public void admin_user_is_successfully_logged_in() {
         DashBoardPage dash =  new DashBoardPage();
-        Assert.assertTrue(dash.welcomemessage.isDisplayed());
+        //Assert.assertTrue(dash.welcomemessage.isDisplayed());
+        String expected = "Welcome Admin";
+        String actual = dash.welcomemessage.getText();
+        Assert.assertEquals("Values do not match", expected, actual);
     }
 
     @When("user enters valid ess username and password")
