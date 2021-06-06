@@ -7,7 +7,10 @@ import io.cucumber.java.en.When;
 import pages.AddEmployeePage;
 import pages.DashBoardPage;
 import utils.CommonMethods;
+import utils.Constants;
+import utils.ExcelReading;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -83,8 +86,20 @@ public class AddEmployeeSteps extends CommonMethods {
     }
 
     @When("user adds multiple employees from excel file from {string} sheet and verify they are added")
-    public void user_adds_multiple_employees_from_excel_file_from_sheet_and_verify_they_are_added(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_multiple_employees_from_excel_file_from_sheet_and_verify_they_are_added(String sheetname) {
+       List<Map<String, String>> newemployees = ExcelReading.excelIntoListMap(Constants.TESTDATA_FILEPATH, sheetname);
+
+       DashBoardPage dash = new DashBoardPage();
+       AddEmployeePage addEmployeePage = new AddEmployeePage();
+
+        Iterator<Map<String, String>> it = newemployees.iterator();
+        while(it.hasNext()){
+            Map<String, String> mapNewEmp = it.next();
+            sendText(addEmployeePage.firstName, mapNewEmp.get("FirstName"));
+            sendText(addEmployeePage.middleName, mapNewEmp.get("MiddleName"));
+            sendText(addEmployeePage.lastName, mapNewEmp.get("LastName"));
+            click(addEmployeePage.saveBtn);
+            //assertion complete in HW
+        }
     }
 }

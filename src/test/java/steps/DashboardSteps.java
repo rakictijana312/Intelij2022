@@ -27,8 +27,6 @@ public class DashboardSteps extends CommonMethods {
         System.out.println(actualtabs);
         Assert.assertTrue(expectedtabs.equals(actualtabs));
         System.out.println("MY test case is passed");
-
-
     }
 
 }
