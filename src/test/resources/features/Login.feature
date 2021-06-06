@@ -18,3 +18,13 @@ Feature: Login
       And user clicks on login button
       Then user see invalid credentials text on login page
 
+  @example
+  Scenario Outline: login with multiple data
+    When user enters "<username>" and "<password>"
+    And user clicks on login button
+    And "<firstname>" is successfully logged in
+  Examples:
+    |username         |password   |firstname|
+    |Admin            |Hum@nhrm123|  Admin  |
+    |william1236000000|Syntax12!!!!|William |
+

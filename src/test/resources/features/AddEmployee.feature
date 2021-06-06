@@ -28,3 +28,10 @@ Feature: Adding employees
     |Test123456| MS       |Test9876|
     |Test1212  | MS       |Test7654|
     |Test3232  | MS       |Test5454|
+
+  @datatablewithheader
+  Scenario: Adding multiple employees in a single execution
+    When add multiple employees and verify they are added successfully
+    |FirstName|MiddleName|LastName|
+    |Jon0404  | MS       |US      |
+    |Jack0404 |MS        |US      |

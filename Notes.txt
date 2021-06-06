@@ -32,6 +32,22 @@ background
 parameters passing from feature file
 TDD approach in cucumber
 
+recap - class 3
+hooks - we define our pre-condition and post condition here with the tags @Before & @After
+glue - checks all the step definition implementation of gherkin steps
+dry run  - if it is set to true, no actual execution happens, quickly scan all the  files to check
+steps are there
+monochrome - makes console log more readable
+tags - we control the flow of execution of our scenarios with the help of tags
+background - we define repeated steps inside it for respective feature file
+passing data from feature file scenario
+
+scenario-outline
+"<firstname>"
+Examples:
+|firstname|lastname|
+
+
 
 
 

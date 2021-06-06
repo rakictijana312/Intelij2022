@@ -58,4 +58,15 @@ public class LoginSteps extends CommonMethods {
         System.out.println("Error message is displayed");
     }
 
+    @When("user enters {string} and {string}")
+    public void user_enters_and(String username, String password) {
+        LoginPage loginpage = new LoginPage();
+        sendText(loginpage.usernamebox, username);
+        sendText(loginpage.passwordbox, password);
+    }
+
+    @When("{string} is successfully logged in")
+    public void is_successfully_logged_in(String firstname) {
+        System.out.println("working fine");
+    }
 }

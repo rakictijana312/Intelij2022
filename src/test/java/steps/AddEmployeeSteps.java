@@ -1,10 +1,15 @@
 package steps;
 
+import com.google.gson.stream.JsonToken;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AddEmployeePage;
 import pages.DashBoardPage;
 import utils.CommonMethods;
+
+import java.util.List;
+import java.util.Map;
 
 public class AddEmployeeSteps extends CommonMethods {
 
@@ -51,5 +56,17 @@ public class AddEmployeeSteps extends CommonMethods {
     @Then("employee added successfully")
     public void employee_added_successfully() {
         System.out.println("Employee Added successfully");
+    }
+
+    @When("add multiple employees and verify they are added successfully")
+    public void add_multiple_employees_and_verify_they_are_added_successfully(DataTable employees) {
+        List<Map<String, String>> employeeNames = employees.asMaps();
+        for(Map<String, String> employeename : employeeNames){
+            String firstnamevalue = employeename.get("FirstName");
+            String middlenamevalue = employeename.get("MiddleName");
+            String lastnamevalue = employeename.get("LastName");
+            System.out.println(firstnamevalue + " "+ middlenamevalue + " " + lastnamevalue);
+        }
+
     }
 }
