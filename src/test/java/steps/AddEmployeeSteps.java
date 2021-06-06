@@ -59,14 +59,32 @@ public class AddEmployeeSteps extends CommonMethods {
     }
 
     @When("add multiple employees and verify they are added successfully")
-    public void add_multiple_employees_and_verify_they_are_added_successfully(DataTable employees) {
+    public void add_multiple_employees_and_verify_they_are_added_successfully(DataTable employees) throws InterruptedException{
         List<Map<String, String>> employeeNames = employees.asMaps();
         for(Map<String, String> employeename : employeeNames){
             String firstnamevalue = employeename.get("FirstName");
             String middlenamevalue = employeename.get("MiddleName");
             String lastnamevalue = employeename.get("LastName");
             System.out.println(firstnamevalue + " "+ middlenamevalue + " " + lastnamevalue);
+
+            AddEmployeePage addEmployeePage = new AddEmployeePage();
+            sendText(addEmployeePage.firstName, firstnamevalue);
+            sendText(addEmployeePage.middleName, middlenamevalue);
+            sendText(addEmployeePage.lastName, lastnamevalue);
+            click(addEmployeePage.saveBtn);
+            //assertion take it as HW
+
+            Thread.sleep(5000);
+            DashBoardPage dash = new DashBoardPage();
+            click(dash.addEmployeeButton);
+            Thread.sleep(3000);
         }
 
+    }
+
+    @When("user adds multiple employees from excel file from {string} sheet and verify they are added")
+    public void user_adds_multiple_employees_from_excel_file_from_sheet_and_verify_they_are_added(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
 }

@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.logging.Log;
@@ -8,6 +9,9 @@ import pages.DashBoardPage;
 import pages.LoginPage;
 import utils.CommonMethods;
 import utils.ConfigReader;
+
+import java.util.List;
+import java.util.Map;
 
 public class LoginSteps extends CommonMethods {
 
@@ -26,7 +30,7 @@ public class LoginSteps extends CommonMethods {
 
     @Then("admin user is successfully logged in")
     public void admin_user_is_successfully_logged_in() {
-        DashBoardPage dash =  new DashBoardPage();
+        DashBoardPage dash = new DashBoardPage();
         //Assert.assertTrue(dash.welcomemessage.isDisplayed());
         String expected = "Welcome Admin";
         String actual = dash.welcomemessage.getText();
@@ -42,8 +46,8 @@ public class LoginSteps extends CommonMethods {
 
     @Then("ess user is successfully logged in")
     public void ess_user_is_successfully_logged_in() {
-       DashBoardPage dash = new DashBoardPage();
-       Assert.assertTrue(dash.welcomemessage.isDisplayed());
+        DashBoardPage dash = new DashBoardPage();
+        Assert.assertTrue(dash.welcomemessage.isDisplayed());
     }
 
     @When("user enters valid username and invalid password")
@@ -68,5 +72,25 @@ public class LoginSteps extends CommonMethods {
     @When("{string} is successfully logged in")
     public void is_successfully_logged_in(String firstname) {
         System.out.println("working fine");
+    }
+
+    @When("user enters valid username and invalid password and verify the error")
+    public void user_enters_valid_username_and_invalid_password_and_verify_the_error(DataTable errordata) {
+        List<Map<String, String>> employeeNames = errordata.asMaps();
+        for (Map<String, String> employeename : employeeNames) {
+            String usernamevalue = employeename.get("username");
+            String passwordvalue = employeename.get("password");
+            String errorvalue = employeename.get("errormessage");
+            System.out.println(usernamevalue + " " + passwordvalue + " " + errorvalue);
+
+            LoginPage loginPage = new LoginPage();
+            sendText(loginPage.usernamebox, usernamevalue);
+            sendText(loginPage.passwordbox, passwordvalue);
+            click(loginPage.loginBtn);
+            String actual = loginPage.errormessage.getText();
+            Assert.assertEquals("Values do not match", errorvalue, actual);
+            System.out.println("MY test case is passed");
+
+        }
     }
 }

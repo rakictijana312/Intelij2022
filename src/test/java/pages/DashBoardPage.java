@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.CommonMethods;
 
+import java.util.List;
+
 public class DashBoardPage extends CommonMethods {
 
     @FindBy(id = "welcome")
@@ -19,8 +21,9 @@ public class DashBoardPage extends CommonMethods {
     @FindBy(id="menu_pim_viewEmployeeList")
     public WebElement employeeListOption;
 
-
-
+    @FindBy(xpath="//div[@class='menu']/ul/li")
+    public List<WebElement> dashboardtabs;
+    
 
     public DashBoardPage(){
         PageFactory.initElements(driver, this);

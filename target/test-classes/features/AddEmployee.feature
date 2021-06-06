@@ -35,3 +35,11 @@ Feature: Adding employees
     |FirstName|MiddleName|LastName|
     |Jon0404  | MS       |US      |
     |Jack0404 |MS        |US      |
+    |MS0909   |MS        |US      |
+
+  @excel
+  Scenario: Adding the employee from excel file
+    When user adds multiple employees from excel file from "newdata" sheet and verify they are added
+
+
+

@@ -49,5 +49,9 @@ Examples:
 
 
 
+user story - admin user should be able to see all the dashboard options
+
+homework - admin user should be able to modify the details of the employee
+
 
 

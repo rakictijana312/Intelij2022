@@ -28,3 +28,9 @@ Feature: Login
     |Admin            |Hum@nhrm123|  Admin  |
     |william1236000000|Syntax12!!!!|William |
 
+  @error
+  Scenario: Login with valid username and invalid password
+    When user enters valid username and invalid password and verify the error
+      | username          | password | errormessage        |
+      | Admin             | Human    | Invalid credentials |
+      | william1236000000 | Syntax   | Invalid credentials |
