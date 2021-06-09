@@ -34,3 +34,15 @@ Feature: Login
       | username          | password | errormessage        |
       | Admin             | Human    | Invalid credentials |
       | william1236000000 | Syntax   | Invalid credentials |
+
+  @errorvalidation
+  Scenario Outline: Login with multiple username and password combinations
+    When user enters different "<usernamevalue>" and "<passwordvalue>" and verify the "<error>" for all the combinations
+   Examples:
+    |usernamevalue|passwordvalue|error|
+    |Admin        |Syntax123!   |Invalid credentials|
+    |abd77        |Hum@nhrm123! |Invalid credentials|
+    |James        |             |Password cannot be empty|
+    |             |Syntax123!   |Username cannot be empty|
+
+

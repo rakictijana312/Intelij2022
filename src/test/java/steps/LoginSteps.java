@@ -90,7 +90,16 @@ public class LoginSteps extends CommonMethods {
             String actual = loginPage.errormessage.getText();
             Assert.assertEquals("Values do not match", errorvalue, actual);
             System.out.println("MY test case is passed");
-
         }
+    }
+
+    @When("user enters different {string} and {string} and verify the {string} for all the combinations")
+    public void user_enters_different_and_and_verify_the_for_all_the_combinations(String usernamevalue, String passwordvalue, String error) {
+        LoginPage loginPage = new LoginPage();
+        sendText(loginPage.usernamebox, usernamevalue);
+        sendText(loginPage.passwordbox, passwordvalue);
+        click(loginPage.loginBtn);
+        String actual = loginPage.errormessage.getText();
+        Assert.assertEquals("Values do not match", error, actual);
     }
 }

@@ -53,5 +53,26 @@ user story - admin user should be able to see all the dashboard options
 
 homework - admin user should be able to modify the details of the employee
 
+recap -
+via parameters -
+via data table -
+via excel file -
+
+tags -
+
+
+maven cucumber report
+add plugin to runner class
+it will generate .json file
+
+2 add - maven cucumber plugin to pom xml file
+specify some configurations in pom file
+
+to attach screenshot to my cucumber report
+
+
+
+
+
 
 
