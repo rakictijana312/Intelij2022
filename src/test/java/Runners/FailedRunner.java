@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Dashboard.feature",
+        features = "@target/failed.txt",
         //glue is where we can find implementations for gherkin steps
         // we provide the path of package for steps
         glue = "steps",
@@ -19,12 +19,13 @@ import org.junit.runner.RunWith;
         //if strict is set to true then at the time of execution if cucumber encounters any undefined
         //steps, it will give an error and stops execution. Also it gives code snippet for the
         //unimplemented steps
+
+       // tags = "@regression",
         //tags will identify the scenarios based on the tags we will provide such as @smoke, @regression etc
         // we can add multiple tags in the runner class to execute scenarios belong to different tags such
         //as and or ,
-        tags = "@dashboardtabs",
-        plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json", "rerun:target/failed.txt"}
+        plugin = {"pretty"}
 )
 
-public class SmokeRunner {
+public class FailedRunner {
 }
