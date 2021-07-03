@@ -42,6 +42,9 @@ public class AddEmployeeSteps extends CommonMethods {
         sendText(add.firstName, firstName);
         sendText(add.middleName, middleName);
         sendText(add.lastName, lastName);
+        GlobalVariables.firstName=firstName;
+        GlobalVariables.middleName=middleName;
+        GlobalVariables.lastName=lastName;
     }
 
     @When("user enters {string} {string} and {string} in the application")

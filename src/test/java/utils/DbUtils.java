@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class DbUtils {
 
+    //Break 1:37
     public static Connection getConnection() {
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
         Connection connection = null;
