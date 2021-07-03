@@ -9,6 +9,7 @@ import pages.DashBoardPage;
 import utils.CommonMethods;
 import utils.Constants;
 import utils.ExcelReading;
+import utils.GlobalVariables;
 
 import java.util.Iterator;
 import java.util.List;
@@ -101,5 +102,11 @@ public class AddEmployeeSteps extends CommonMethods {
             click(addEmployeePage.saveBtn);
             //assertion complete in HW
         }
+    }
+
+    @When("capture the employeeId")
+    public void capture_the_employee_id() {
+       AddEmployeePage addEmployeePage=new AddEmployeePage();
+       GlobalVariables.empId=addEmployeePage.employeeId.getAttribute("value");
     }
 }
