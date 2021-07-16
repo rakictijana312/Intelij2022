@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 public class HardCodedExamples {
@@ -48,8 +49,7 @@ public class HardCodedExamples {
 				.body("{\n" + "  \"emp_firstname\": \"Syntax\",\n" + "  \"emp_lastname\": \"API\",\n"
 						+ "  \"emp_middle_name\": \"Instructor\",\n" + "  \"emp_gender\": \"F\",\n"
 						+ "  \"emp_birthday\": \"1990-07-10\",\n" + "  \"emp_status\": \"Employee\",\n"
-						+ "  \"emp_job_title\": \"Healer\"\n" + "}")
-				.log().all();
+						+ "  \"emp_job_title\": \"Healer\"\n" + "}");
 
 		/*
 		 * 
@@ -61,7 +61,7 @@ public class HardCodedExamples {
 		/**
 		 * prettyPrint() does the same as System.out.println(response.asString());
 		 */
-		response.prettyPrint();
+		//response.prettyPrint();
 
 		/**
 		 * jsonPath() allows us to retrieve specific data from a json object - just like
@@ -69,7 +69,7 @@ public class HardCodedExamples {
 		 */
 		employee_id = response.jsonPath().getString("Employee.employee_id");
 
-		System.out.println(employee_id);
+		//System.out.println(employee_id);
 
 		/**
 		 * Performing assertions
@@ -99,6 +99,17 @@ public class HardCodedExamples {
 		Response response = preparedRequest.when().get("/getOneEmployee.php");
 		
 		response.prettyPrint();
+		
+		String empID = response.jsonPath().getString("employee.employee_id");
+		
+		boolean comparingEmpIDs = empID.contentEquals(employee_id);
+		
+		Assert.assertTrue(comparingEmpIDs);
+		
+		// Task: Retrieve the first name and assert that the first name is the same as the one you used
+		//DO NOT USE HAMCREST MATCHERS 
+		
+		
 
 	}
 }
