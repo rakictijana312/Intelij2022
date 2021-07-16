@@ -3,13 +3,15 @@ package API;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
+
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HardCodedExamples {
 
 	/*
@@ -98,7 +100,7 @@ public class HardCodedExamples {
 		
 		Response response = preparedRequest.when().get("/getOneEmployee.php");
 		
-		response.prettyPrint();
+		//response.prettyPrint();
 		
 		String empID = response.jsonPath().getString("employee.employee_id");
 		
@@ -109,7 +111,20 @@ public class HardCodedExamples {
 		// Task: Retrieve the first name and assert that the first name is the same as the one you used
 		//DO NOT USE HAMCREST MATCHERS 
 		
-		
+		String firstName = response.jsonPath().getString("employee.emp_firstname");
+		Assert.assertTrue(firstName.contentEquals("Syntax"));
 
 	}
+	
+	@Test 
+	public void getAllEmployees() {
+		
+		RequestSpecification preparedRequest = given().header("Authorization", token).header("Content-Type", "application/json");
+		
+		Response response = preparedRequest.when().get("/getAllEmployees.php");
+		
+		response.prettyPrint();
+		
+	}
+	
 }
