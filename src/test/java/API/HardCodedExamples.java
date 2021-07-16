@@ -44,7 +44,7 @@ public class HardCodedExamples {
 	}
 
 	@Test
-	public void postCreateEmployee() {
+	public void aPostCreateEmployee() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token)
 				.header("Content-Type", "application/json")
@@ -94,7 +94,7 @@ public class HardCodedExamples {
 	}
 
 	@Test
-	public void getCreatedEmployee() {
+	public void bGetCreatedEmployee() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token).header("Content-Type", "application/json").queryParam("employee_id", employee_id);
 		
@@ -117,13 +117,15 @@ public class HardCodedExamples {
 	}
 	
 	@Test 
-	public void getAllEmployees() {
+	public void cGetAllEmployees() {
 		
 		RequestSpecification preparedRequest = given().header("Authorization", token).header("Content-Type", "application/json");
 		
 		Response response = preparedRequest.when().get("/getAllEmployees.php");
 		
 		response.prettyPrint();
+		
+		
 		
 	}
 	
