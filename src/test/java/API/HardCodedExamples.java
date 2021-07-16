@@ -1,6 +1,7 @@
 package API;
 
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.*;
@@ -123,10 +124,46 @@ public class HardCodedExamples {
 		
 		Response response = preparedRequest.when().get("/getAllEmployees.php");
 		
-		response.prettyPrint();
+		String allEmployees = response.prettyPrint();
 		
+		/*
+		 * Creating object of JsonPath class
+		 */
+		JsonPath js = new JsonPath(allEmployees);
 		
+		/*
+		 * Retrieving number of employees in response body
+		 */
+		int count = js.getInt("Employees.size()");
 		
+		System.out.println(count);
+		
+		//Print out all employee IDs from the response 
+		
+		for(int i =0; i < count; i++) {
+			
+			String employeedIDs = js.getString("Employees["+ i + "].employee_id");			
+			//System.out.println(employeedIDs);
+			
+			/*
+			 * Verify stored employee ID from previous call is in response body
+			 */
+			if(employeedIDs.contentEquals(employee_id)) {
+				
+				/*
+				 * printing out the employee ID 
+				 */
+				System.out.println("Employee ID " + employee_id + " is present in response body");
+				String firstName = js.getString("Employees["+ i + "].emp_firstname");
+				
+				/*
+				 * Printing out the first name of the employee that we created 
+				 */
+				System.out.println("Employee name is "+ firstName);
+				break;
+			}
+			
+		}
 	}
 	
 }
