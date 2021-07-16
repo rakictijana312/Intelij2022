@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
@@ -63,8 +64,32 @@ public class HardCodedExamples {
 		 */
 		response.prettyPrint();
 		
+		/**
+		 * jsonPath() allows us to retrieve specific data from a json object - just like an xpath with selenium
+		 */
+		String employee_id = response.jsonPath().getString("Employee.employee_id");
 		
+		System.out.println(employee_id);
 		
+		/**
+		 * Performing assertions
+		 */
+		response.then().assertThat().statusCode(201);
+		
+		/**
+		 * Using Hamcrest Matchers class equalTo()
+		 */
+		response.then().assertThat().body("Message", equalTo("Employee Created"));
+		
+		// Write an assertion that verifies that the response body has the name you used 
+		
+		response.then().assertThat().body("Employee.emp_firstname", equalTo("Syntax"));
+		
+		/**
+		 * Verifying server
+		 */
+		response.then().assertThat().header("Server", "Apache/2.4.39 (Win64) PHP/7.2.18");
 	}
-
+	
+	
 }
