@@ -11,7 +11,7 @@ import org.junit.Test;
 public class HardCodedExamples {
 
 	/*
-	 * NOTE:
+	 * NOTES:
 	 * 
 	 * Given - Preparing the request
 	 * 
@@ -30,6 +30,10 @@ public class HardCodedExamples {
 				.header("Content-Type", "application/json").queryParam("employee_id", "20333320");
 
 		Response response = preparedRequest.when().get("/getOneEmployee.php");
+		
+		/*
+		 * Printing response using aString() method to convert JSON object to a String and printing using System.Out.Println()
+		 */
 		System.out.println(response.asString());
 	}
 
@@ -47,8 +51,16 @@ public class HardCodedExamples {
 								+ "  \"emp_job_title\": \"Healer\"\n"
 								+ "}").log().all();
 		
+		/*
+		 * 
+		 * log().all() will log and print all information being sent with the request 
+		 */
+		
 		Response response = preparedRequest.when().post("/createEmployee.php");
 		
+		/**
+		 * prettyPrint() does the same as System.out.println(response.asString()); 
+		 */
 		response.prettyPrint();
 		
 		
