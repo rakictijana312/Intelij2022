@@ -9,6 +9,7 @@ import utils.apiConstants;
 import utils.apiPayloadConstants;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
 
 public class APIWorkflowSteps {
 	RequestSpecification request;
@@ -29,15 +30,20 @@ public class APIWorkflowSteps {
 	}
 
 	@Then("the status code for creating an employee is {int}")
-	public void the_status_code_for_creating_an_employee_is(Integer int1) {
+	public void the_status_code_for_creating_an_employee_is(int statusCode) {
+		
+		response.then().assertThat().statusCode(statusCode);
 	}
 
 	@Then("the employee created contains key {string} and value {string}")
 	public void the_employee_created_contains_key_and_value(String string, String string2) {
+		
+		response.then().assertThat().body( "Message", equalTo("Employee Created") );
 	}
 
 	@Then("the employeeID {string} is stored as a global variable to be used for other calls")
 	public void the_employee_id_is_stored_as_a_global_variable_to_be_used_for_other_calls(String string) {
+		
 	}
 
 }
