@@ -14,6 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class APIWorkflowSteps {
 	RequestSpecification request;
 	Response response;
+	static String employee_id;
 
 	@Given("a request is prepared to create an employee")
 	public void a_request_is_prepared_to_create_an_employee() {
@@ -36,13 +37,15 @@ public class APIWorkflowSteps {
 	}
 
 	@Then("the employee created contains key {string} and value {string}")
-	public void the_employee_created_contains_key_and_value(String string, String string2) {
-		
-		response.then().assertThat().body( "Message", equalTo("Employee Created") );
+	public void the_employee_created_contains_key_and_value(String message, String employeeCreated) {
+
+		response.then().assertThat().body(message, equalTo(employeeCreated) );
 	}
 
 	@Then("the employeeID {string} is stored as a global variable to be used for other calls")
-	public void the_employee_id_is_stored_as_a_global_variable_to_be_used_for_other_calls(String string) {
+	public void the_employee_id_is_stored_as_a_global_variable_to_be_used_for_other_calls(String empID) {
+		
+		employee_id = response.jsonPath().getString(empID);
 		
 	}
 

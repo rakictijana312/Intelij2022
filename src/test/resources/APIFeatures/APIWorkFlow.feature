@@ -10,4 +10,4 @@ Feature: Syntax HRMS API Workflow
     When a POST call is made to create an employee
     Then the status code for creating an employee is 201
     And the employee created contains key "Message" and value "Employee Created"
-    And the employeeID "vbcx" is stored as a global variable to be used for other calls
+    And the employeeID "Employee.employee_id" is stored as a global variable to be used for other calls
