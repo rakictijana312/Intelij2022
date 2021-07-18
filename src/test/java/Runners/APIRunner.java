@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
         //it means that the console output for the cucumber test is easily readable
         //it will remove unreadable character
         monochrome = true,
+        strict = true,
         //if strict is set to true then at the time of execution if cucumber encounters any undefined
         //steps, it will give an error and stops execution. Also it gives code snippet for the
         //unimplemented steps
