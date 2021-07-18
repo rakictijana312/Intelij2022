@@ -1,11 +1,10 @@
-@Test
 Feature: Syntax HRMS API Workflow
   Description: This feature files tests Syntax HRMS API Workflow
-  
+
   Background: 
   Given a JWT is generated
 
-  @APIWorkflow @Test
+  @APIWorkflow 
   Scenario: Creating an Employee
     Given a request is prepared to create an employee
     When a POST call is made to create an employee
