@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = "APISteps",
         //if we set dry run to true, it will quickly scan all gherkin steps are implemented or not
         // if it is true, then no actual execution happens
-        dryRun = true,
+        dryRun = false,
         //it means that the console output for the cucumber test is easily readable
         //it will remove unreadable character
         monochrome = true,

@@ -3,15 +3,29 @@ package APISteps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import utils.apiConstants;
+import utils.apiPayloadConstants;
+
+import static io.restassured.RestAssured.*;
 
 public class APIWorkflowSteps {
-	
+	RequestSpecification request;
+	Response response;
+
 	@Given("a request is prepared to create an employee")
 	public void a_request_is_prepared_to_create_an_employee() {
+
+		request = given().header(apiConstants.Header_Content_type, apiConstants.Content_type)
+				.header(apiConstants.Header_Authorization, GenerateTokenSteps.token)
+				.body(apiPayloadConstants.createEmployeePayload());
 	}
 
 	@When("a POST call is made to create an employee")
 	public void a_post_call_is_made_to_create_an_employee() {
+
+		response = request.when().post(apiConstants.CREATE_EMPLOYEE_URI);
 	}
 
 	@Then("the status code for creating an employee is {int}")
