@@ -185,8 +185,6 @@ public class HardCodedExamples {
 		
 		Response response = preparedRequest.when().put("/updateEmployee.php");
 		
-		response.prettyPrint();
-		
+		response.prettyPrint();	
 	}
-
 }
