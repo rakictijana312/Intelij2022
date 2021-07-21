@@ -48,5 +48,12 @@ Feature: Adding employees
     Then query the HRMS database
     And verify data from frontend and backend is same
 
+    @db
+    Scenario: Add the employee and testing it from the backend
+      When user enters first name "Yulia123" middle name "MS" and last name "Yulia456"
+      And capture the employeeId
+      And user clicks on save button option
+      Then query the HRMS database
+      And verify the data from frontend and backend
 
 
