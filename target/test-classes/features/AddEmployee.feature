@@ -23,23 +23,30 @@ Feature: Adding employees
     And user clicks on save button option
     Then employee added successfully
 
-  Examples:
-    |FirstName |MiddleName|LastName|
-    |Test123456| MS       |Test9876|
-    |Test1212  | MS       |Test7654|
-    |Test3232  | MS       |Test5454|
+    Examples:
+      | FirstName  | MiddleName | LastName |
+      | Test123456 | MS         | Test9876 |
+      | Test1212   | MS         | Test7654 |
+      | Test3232   | MS         | Test5454 |
 
   @datatablewithheader
   Scenario: Adding multiple employees in a single execution
     When add multiple employees and verify they are added successfully
-    |FirstName|MiddleName|LastName|
-    |Jon0404  | MS       |US      |
-    |Jack0404 |MS        |US      |
-    |MS0909   |MS        |US      |
+      | FirstName | MiddleName | LastName |
+      | Jon0404   | MS         | US       |
+      | Jack0404  | MS         | US       |
+      | MS0909    | MS         | US       |
 
   @excel
   Scenario: Adding the employee from excel file
     When user adds multiple employees from excel file from "newdata" sheet and verify they are added
+  @db @regression
+  Scenario: Adding employee and Database testing
+    When user enters first name "Yulia123" middle name "MS" and last name "Yulia456"
+    And capture employeeId
+    And user clicks on save button option
+    Then query the HRMS database
+    And verify data from frontend and backend is same
 
     @db
     Scenario: Add the employee and testing it from the backend

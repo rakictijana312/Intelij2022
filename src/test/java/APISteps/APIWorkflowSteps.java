@@ -96,7 +96,7 @@ public class APIWorkflowSteps {
 		
 		List<Map<String, String>> expectedData = dataTable.asMaps(String.class, String.class);
 
-		List<Map<String, String>> actualData = response.body().jsonPath().get(employeeObject);
+		Map<String, String> actualData = response.body().jsonPath().get(employeeObject);
 		
 		int index = 0; 
 		
@@ -106,7 +106,7 @@ public class APIWorkflowSteps {
 			for(String key : keys) {
 				
 				String expectedValue = map.get(key);
-				String actualValue = actualData.get(index).get(key);
+				String actualValue = actualData.get(key);
 				
 				Assert.assertEquals(expectedValue, actualValue);
 				
