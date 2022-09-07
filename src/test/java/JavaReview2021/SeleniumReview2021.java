@@ -126,7 +126,7 @@ public class SeleniumReview2021 {
 
      // set the property for chrome driver, specify its location via the webdriver.chrome.driver
      System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
-
+z
      // instantiate an instance of ChromeDriver, which will be driving our browser:
      public static WebDriver driver = new ChromeDriver();
 

@@ -8,8 +8,7 @@ public class TellMeAboutYourSelf {
         hello.... good morning.... good afternoon ....
         first, i would like to thank you for your time today. my name is _____ . i am a qa
         engineer with ___ years of experience in the software testing field. i have been
-        experienced in both automation and manual testing on web based, windows and client/
-        server applications.
+        experienced in both automation and manual testing on web based applications.
 
         As a qa engineer, i was involved in all phases of software development life cycle,
         starting from requirement analysis till production deployment and worked in both
@@ -20,7 +19,9 @@ public class TellMeAboutYourSelf {
 
         Coming to my automation experience i worked with different sets of tools, languages and
         frameworks, such as selenium, testng, cucumber, restassured, maven, git and
-        jenkins. my current project is with ______ where i do automation using selenium
+        jenkins.
+
+        On myy current project I do automation using selenium
         webdriver and java. also i am performing api and database testing.
 
         On top of my technical skills i am a team player and a quick learner.
@@ -46,6 +47,7 @@ public class TellMeAboutYourSelf {
 
         ● Meetings/ Scrum Ceremonies
         ➔ if it is the beginning of the sprint after Daily Stand Up (  you attending, scrum master, developers)
+
         Sprint Planning ( first day of the sprint  at 10:15am after the daily stand up). Can last 2-4 h depend on team size
         and how long is the sprint.
         lead by PRODUCT OWNER???
@@ -90,6 +92,7 @@ public class TellMeAboutYourSelf {
         The rest of the team
         2 Business Analyst
         2 UI UX
+
         1 Architect
         1 PM
 
@@ -97,12 +100,13 @@ public class TellMeAboutYourSelf {
         per day? When do you do automation in your sprint?
 
         Mostly I have automated functional regression tests (including smoke and regression,
-        database and API testing. When
-        developers are done with development of the user story and code is deployed to a qa
+        database and API testing.
+        When developers are done with development of the user story and code is deployed to a qa
         environment, I test the user story manually and then do automation.
 
         Also in my previous projects when I was only part of the automation team we were doing
-        automation after the sprint was over. Ask them how they do automation in their
+        automation after the sprint was over.
+        Ask them how they do automation in their
         company.
 
         There is no right or wrong answer on the automation of test cases per day:

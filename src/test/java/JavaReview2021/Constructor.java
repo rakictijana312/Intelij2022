@@ -18,7 +18,7 @@ public class Constructor {
     4) compiler by default is providing default constructor if there is no constructor but does not create any method
 
 
-ss
+
 
 
 
