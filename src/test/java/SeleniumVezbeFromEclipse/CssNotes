@@ -1,0 +1,57 @@
+Selenium class 4
+
+Css Selectors (Cascading Styling Sheet)
+
+It is another way of locating elements uniqly
+Syntax:
+tagname[attribute = 'attribute value']
+
+exapmle:
+input[id= 'user-message']
+
+Css does not give you an opportunity to identify element by text.
+
+Shortcuts for CSS:
+Shourtcut for className: "." ---className
+tagname.classNameValue
+input.form-control
+
+Shourtcut for ID: "#"---ID
+tagname#idValue
+input#ctrlododofsedo   try to do all of them without space
+
+contains() method in CSS:
+* symbol represents contains() method =
+ tagname[attribute *= 'Partial Attribute Value']
+input[id*='username'] //check for space
+
+starts-with method in CSS:
+^ symbol represents starts-with method=
+tagname[attribute^= 'Partial Attribute Value']
+input[type^='sub']
+
+ends-with method in CSS:
+$ symbol represent ends-with method=
+tagname[attribute $= 'Partial Attribute Value']
+input[type $='word']
+
+WebElement Commands:
+Consist of several methods where we can preform actions and get element
+state on the web page
+
+isEnabled()--boolean value
+isSelected()--boolean value
+isDisplayed()--boolean value
+clear()--void
+getAText()--String value
+getAttribute-- String value
+
+
+
+
+
+
+
+
+
+
