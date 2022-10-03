@@ -1,8 +1,10 @@
-package class30;
+package JavaEclipsVezbe;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
-public class SetsDemo2 {
+public class JavaSet {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList=new ArrayList<>();
         arrayList.add(10);
@@ -12,10 +14,11 @@ public class SetsDemo2 {
         arrayList.add(120);
         arrayList.add(100);
         arrayList.add(100);
-      //  arrayList.add(null);
+        //  arrayList.add(null);
         Set<Integer> set=new HashSet<>(arrayList);
         ArrayList<Integer> removedElements=new ArrayList<>(set);
         System.out.println(removedElements);
 
-            }
+    }
 }
+

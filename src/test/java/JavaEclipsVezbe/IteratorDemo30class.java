@@ -1,9 +1,9 @@
-package class30;
+package JavaEclipsVezbe;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class IteratorDemo1 {
+public class IteratorDemo30class {
     public static void main(String[] args) {
         ArrayList<String> subjects=new ArrayList<>();
         subjects.add("SDLC");
@@ -17,10 +17,10 @@ public class IteratorDemo1 {
         System.out.println(iterator.hasNext());
         System.out.println(iterator.next());
         System.out.println(subjects);
-         iterator=subjects.iterator();
+        iterator=subjects.iterator();
         System.out.println(iterator.hasNext());
         System.out.println(subjects);
-      //  System.out.println(iterator.next());
+        //  System.out.println(iterator.next());
 
     }
 }
