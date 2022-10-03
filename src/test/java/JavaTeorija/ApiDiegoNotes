@@ -1,0 +1,36 @@
+
+------------------------------REST ASSURED-----------------------
+
+Rest Assured is DSL (Domain Specific Language)
+
+It is a java library used to automate REST API's
+
+Rest Assured follows a behaviour driven development (BDD) approach:
+
+Given - PREPARING REQUEST
+When - making the request / making the call / hitting the end point
+Then - verification/assertions
+
+1. What is Rest Assured?
+- a java library to automate Rest API's
+
+2. What are the principles of Rest Assured?
+- Follows a BDD approach:
+Given- prepare req
+When- hit endpoint
+Then- Varification/Assertion
+
+3. We may have to manually import some classes:
+import static io.restassured.RestAssured.*;
+
+4. BaseURI is the same as BaseURL
+
+5. Runner collection in POSTMAN what is?
+A file/class/module where you can set specific specifications for your test case execution.
+
+
+
+
+
+
+

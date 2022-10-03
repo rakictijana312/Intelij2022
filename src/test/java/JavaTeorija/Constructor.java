@@ -8,7 +8,7 @@ public class Constructor {
     2) does not have any return type
     3) may or may not have any parameters.
 
-    CANT BE ABSTRACT, FINAL OR STATIC
+    CAN'T BE ABSTRACT, FINAL OR STATIC
     WE CAN OVERLOAD USING DIFFERENT TYPE OF PARAMETERS BUT WE CAN'T OVERRIDE
 
     Difference with method:

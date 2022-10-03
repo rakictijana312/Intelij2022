@@ -4,7 +4,8 @@ public class StingBuilderBufferf {
 
     /*
 The most important difference between String and StringBuffer in java is that String
-object is immutable whereas StringBuffer object is mutable. Once a String Object is
+object is immutable whereas StringBuffer object is mutable.
+Once a String Object is
 created we cannot change it and everytime we change the value of a String there is
 actually a new String Object getting created. For example we cannot reverse string
 directly, only through using StringBuffer class.

@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utils.apiConstants;
-import utils.apiPayloadConstants;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
@@ -22,7 +21,7 @@ public class APIWorkflowSteps {
 	RequestSpecification request;
 	Response response;
 	static String employee_id;
-
+/*
 	@Given("a request is prepared to create an employee")
 	public void a_request_is_prepared_to_create_an_employee() {
 

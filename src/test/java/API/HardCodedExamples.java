@@ -17,19 +17,18 @@ public class HardCodedExamples {
 
 	/*
 	 * NOTES:
-	 * 
+	 *
 	 * Given - Preparing the request
-	 * 
+	 *
 	 * When - making the request/making the call/hitting the endpoint
-	 * 
+	 *
 	 * Then - verification/assertions
 	 */
 
 	String baseURI = RestAssured.baseURI = "http://hrm.syntaxtechs.net/syntaxapi/api";
-	String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjY2MTc5MTcsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTYyNjY2MTExNywidXNlcklkIjoiMjk2MSJ9.niIYLL06_u3pNjOHFRU0ec5fcuXpMJfjkjYKtGpT0jU";
-	static String employee_id;
-
-	// @Test
+	String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NjQxMzAyMzksImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY2NDE3MzQzOSwidXNlcklkIjoiNDMyMSJ9.qEbofyTDn32gpmS6b3yphft8gQ3vooUJ_dZgPhkZMNk";
+    static String employee_id;
+	 @Test
 	public void sampleTest() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token)
@@ -44,7 +43,7 @@ public class HardCodedExamples {
 		System.out.println(response.asString());
 	}
 
-	@Test
+	//@Test
 	public void aPostCreateEmployee() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token)
@@ -55,7 +54,7 @@ public class HardCodedExamples {
 						+ "  \"emp_job_title\": \"Healer\"\n" + "}");
 
 		/*
-		 * 
+		 *
 		 * log().all() will log and print all information being sent with the request
 		 */
 
@@ -94,7 +93,7 @@ public class HardCodedExamples {
 		response.then().assertThat().header("Server", "Apache/2.4.39 (Win64) PHP/7.2.18");
 	}
 
-	@Test
+	//@Test
 	public void bGetCreatedEmployee() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token)
@@ -119,7 +118,7 @@ public class HardCodedExamples {
 
 	}
 
-	//@Test
+	@Test
 	public void cGetAllEmployees() {
 
 		RequestSpecification preparedRequest = given().header("Authorization", token).header("Content-Type",
@@ -168,13 +167,13 @@ public class HardCodedExamples {
 		}
 	}
 
-	@Test
+	//@Test
 	public void dPutUpdateCreatedEmployee() {
 
 		/*
-		 * Update the created employee 
+		 * Update the created employee
 		 */
-			
+
 		RequestSpecification preparedRequest = given().header("Authorization", token)
 		        .header("Content-Type", "application/json").body("{\n" + "  \"employee_id\": \"" + employee_id + "\",\n"
 				+ "  \"emp_firstname\": \"syntaxUpdatedFirstName\",\n"
@@ -182,9 +181,9 @@ public class HardCodedExamples {
 				+ "  \"emp_middle_name\": \"syntaxUpdatedMiddleName\",\n" + "  \"emp_gender\": \"F\",\n"
 				+ "  \"emp_birthday\": \"2000-07-11\",\n" + "  \"emp_status\": \"Employee\",\n"
 				+ "  \"emp_job_title\": \"Cloud Consultant\"\n" + "}");
-		
+
 		Response response = preparedRequest.when().put("/updateEmployee.php");
-		
-		response.prettyPrint();	
+
+		response.prettyPrint();
 	}
 }

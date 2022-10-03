@@ -49,7 +49,8 @@ public class OOPS {
                   Login method() - we can log in with username and password amd we can log in with phone num and password
 
 
-       METHOD OVERRIDING: Declaring a method in child class which is already present in the parent class is called
+       METHOD OVERRIDING:
+        Declaring a method in child class which is already present in the parent class is called
        Method Overriding.In simple words, overriding means to override the functionality of an
        existing method.
        Framework: Oksana / toString() method

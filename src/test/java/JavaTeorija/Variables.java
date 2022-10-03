@@ -28,6 +28,7 @@ public class Variables {
          - Class is the blueprint which we are using to create an object and is declared with class keyword
 
          - Object is instance of the class and has behaviour/method (eat, bark) and state/variable(color, bread)
+
          - String is the sequence of characters, for example String "Hello" has 5 ch. String is an object that has own
            methods (contains, length, substring, charAt). String is immutable object that means once is created can't
            be change

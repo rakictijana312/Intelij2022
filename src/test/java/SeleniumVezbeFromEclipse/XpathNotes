@@ -53,6 +53,8 @@ identifying elements by following sibling: ----STEP UPPP
 //tagname[@attribute = 'attribute value']/following-sibling::tagname
 //input[@id = 'calFromDate']/following-sibling::img
 
+
+
 identifying elements by preceding siblings ----STEP DOWN
 //tagname[@attribute = 'attribute value']/preceding-sibling::tagname
 //span[text() = '& Orders']/preceding-sibling::span
