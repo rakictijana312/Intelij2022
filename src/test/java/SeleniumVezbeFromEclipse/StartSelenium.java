@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //close whole browser
 public class StartSelenium {
 
-	 public static void main(String[] args) throws InterruptedException {
+	 public static void main(String[] args) {
 
         
 
@@ -23,21 +23,21 @@ public class StartSelenium {
 	            WebDriver driver = new ChromeDriver();
 	            driver.get("https://www.amazon.com/");
 	            driver.manage().window().maximize();
-	         // driver.manage().window().fullscreen();
-	            Thread.sleep(2000); // will throw Interrupted Exception
-	            driver.navigate().back();
-	            Thread.sleep(2000);
-	            driver.navigate().forward();
-	            Thread.sleep(2000);
-	            driver.navigate().refresh();
-	            Thread.sleep(2000);
-	            driver.navigate().refresh();
-	            Thread.sleep(2000);
-	            
-	            String title = driver.getTitle();
-	            String url = driver.getCurrentUrl();
-	            System.out.println(url + " " + title);
-	         
+//	         // driver.manage().window().fullscreen();
+//	            Thread.sleep(2000); // will throw Interrupted Exception
+//	            driver.navigate().back();
+//	            Thread.sleep(2000);
+//	            driver.navigate().forward();
+//	            Thread.sleep(2000);
+//	            driver.navigate().refresh();
+//	            Thread.sleep(2000);
+//	            driver.navigate().refresh();
+//	            Thread.sleep(2000);
+//
+//	            String title = driver.getTitle();
+//	            String url = driver.getCurrentUrl();
+//	            System.out.println(url + " " + title);
+//
 	          //driver.close();
 	            driver.quit();
 	            

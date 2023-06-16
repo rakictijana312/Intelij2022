@@ -7,7 +7,7 @@ public class TellMeAboutYourSelf {
 
         hello.... good morning.... good afternoon ....
         first, i would like to thank you for your time today. my name is _____ . i am a qa
-        engineer with ___ years of experience in the software testing field. i have been
+        engineer with ___ years of experience in the software testing field. i have beeny
         experienced in both automation and manual testing on web based applications.
 
         As a qa engineer, i was involved in all phases of software development life cycle,

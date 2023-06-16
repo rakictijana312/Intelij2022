@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Set;
 
-public class MapsDemo2 {
+public class  MapsDemo2 {
     public static void main(String[] args) {
         HashMap<Integer,String> students=new HashMap<>();
         students.put(1,"Karina");
